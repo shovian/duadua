@@ -39,7 +39,7 @@ const ListBarang: React.FC = () => {
                     <li
                     key={barang.id}
                     onClick={() => handleBarangClick(barang.id)}
-                    className="border border-gray-300 rounded-lg p-4 mb-4 bg-white cursor-pointer transition-shadow hover:shadow-lg transform hover:scale-105"
+                    className="border border-gray-300 rounded-lg p-4 mb-4 bg-white cursor-pointer transition-shadow transition-all hover:shadow-lg transform hover:scale-105"
                 >
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">{barang.name}</h3>
                     <div className="flex justify-between text-gray-700">
