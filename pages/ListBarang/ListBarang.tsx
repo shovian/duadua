@@ -29,23 +29,27 @@ const ListBarang: React.FC = () => {
     ]);
 
     function handleBarangClick(id: number): void {
-        router.push("/" + id);
+        router.push("/detail-barang/" + id);
     }
 
     return (
-        <div className="max-w-2xl mx-auto my-8 p-6 bg-gray-100 rounded-lg shadow-md">
+        <div className=" mx-4 my-8 p-6 bg-gray-100 rounded-lg shadow-md">
             <ul className="list-none p-0">
                 {barangList.map((barang) => (
                     <li
-                        key={barang.id}
-                        onClick={() => handleBarangClick(barang.id)} // Use click handler for navigation
-                        className="border border-gray-300 rounded-md p-4 mb-4 bg-white cursor-pointer hover:shadow-lg transition-shadow"
-                    >
-                        <h3 className="text-lg font-semibold">{barang.name}</h3>
-                        <p className="text-gray-700"><strong>Category:</strong> {barang.category}</p>
-                        <p className="text-gray-700"><strong>Price:</strong> {barang.price} IDR</p>
-                        <p className="text-gray-700"><strong>Stock:</strong> {barang.stock}</p>
-                    </li>
+                    key={barang.id}
+                    onClick={() => handleBarangClick(barang.id)}
+                    className="border border-gray-300 rounded-lg p-4 mb-4 bg-white cursor-pointer transition-shadow hover:shadow-lg transform hover:scale-105"
+                >
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">{barang.name}</h3>
+                    <div className="flex justify-between text-gray-700">
+                        <p><strong>Category:</strong> {barang.category}</p>
+                        <p><strong>Price:</strong> {barang.price} IDR</p>
+                    </div>
+                    <div className="flex justify-between text-gray-700">
+                        <p><strong>Stock:</strong> {barang.stock}</p>
+                    </div>
+                </li>
                 ))}
             </ul>
         </div>

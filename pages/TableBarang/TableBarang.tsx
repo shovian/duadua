@@ -53,7 +53,7 @@ const TableBarang: React.FC = () => {
     };
 
     return (
-        <div className="max-w-2xl mx-auto my-8 p-6 bg-gray-100 rounded-lg shadow-md">
+        <div className=" mx-8 my-8 p-6 bg-gray-100 rounded-lg shadow-md">
             <h2 className="text-2xl font-bold mb-4">Barang List</h2>
             <table className="min-w-full bg-white border border-gray-300 rounded-lg">
                 <thead className="bg-gray-200">
@@ -62,7 +62,7 @@ const TableBarang: React.FC = () => {
                             <th
                                 key={header}
                                 onClick={() => requestSort(header as keyof TBarang)}
-                                className="py-2 px-4 text-left border-b cursor-pointer hover:bg-gray-100"
+                                className="py-2 px-4 text-left border-b cursor-pointer hover:bg-gray-100 transition-colors"
                             >
                                 {header.charAt(0).toUpperCase() + header.slice(1)}
                                 {sortConfig?.key === header && (sortConfig.direction === 'ascending' ? ' ▲' : ' ▼')}
@@ -72,7 +72,7 @@ const TableBarang: React.FC = () => {
                 </thead>
                 <tbody>
                     {sortedBarangList.map((barang) => (
-                        <tr key={barang.id} className="hover:bg-gray-100">
+                        <tr key={barang.id} className="hover:bg-gray-100 transition-colors">
                             <td className="py-2 px-4 border-b">{barang.id}</td>
                             <td className="py-2 px-4 border-b">{barang.name}</td>
                             <td className="py-2 px-4 border-b">{barang.category}</td>

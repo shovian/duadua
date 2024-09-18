@@ -2,6 +2,10 @@
 
 
 // TODO: Replace the following with your app's Firebase project configuration
+
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+
 // See: https://support.google.com/firebase/answer/7015592
 const firebaseConfig = {
   apiKey: "YOUR_API_KEY",

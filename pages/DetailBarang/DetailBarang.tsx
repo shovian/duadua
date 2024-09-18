@@ -12,21 +12,25 @@ const DetailBarang: React.FC<Props> = ({ barang }) => {
     }
 
     return (
-        <div className="p-6 max-w-md mx-auto my-8 bg-gray-100 rounded-lg shadow-md">
-            <h1 className="text-2xl font-bold mb-4">{barang.name}</h1>
-            <p className="text-gray-700"><strong>Category:</strong> {barang.category}</p>
-            <p className="text-gray-700"><strong>Price:</strong> {barang.price} IDR</p>
-            <p className="text-gray-700"><strong>Stock:</strong> {barang.stock}</p>
-            {barang.description && <p className="text-gray-700"><strong>Description:</strong> {barang.description}</p>}
-            {barang.brand && <p className="text-gray-700"><strong>Brand:</strong> {barang.brand}</p>}
-            {barang.imageUrl && (
-                <img 
-                    src={barang.imageUrl} 
-                    alt={barang.name} 
-                    className="mt-4 max-w-full h-auto rounded-md shadow-sm" 
-                />
-            )}
-        </div>
+        <div className="p-6 max-w-md mx-auto my-8 bg-white rounded-lg shadow-lg">
+    <h1 className="text-3xl font-bold text-gray-900 mb-4">{barang.name}</h1>
+    <p className="text-gray-800"><strong>Category:</strong> <span className="text-gray-600">{barang.category}</span></p>
+    <p className="text-gray-800"><strong>Price:</strong> <span className="text-gray-600">{barang.price} IDR</span></p>
+    <p className="text-gray-800"><strong>Stock:</strong> <span className="text-gray-600">{barang.stock}</span></p>
+    {barang.description && (
+        <p className="text-gray-800 mt-2"><strong>Description:</strong> <span className="text-gray-600">{barang.description}</span></p>
+    )}
+    {barang.brand && (
+        <p className="text-gray-800"><strong>Brand:</strong> <span className="text-gray-600">{barang.brand}</span></p>
+    )}
+    {barang.imageUrl && (
+        <img 
+            src={barang.imageUrl} 
+            alt={barang.name} 
+            className="mt-4 max-w-full h-auto rounded-md shadow-sm" 
+        />
+    )}
+</div>
     );
 };
 
