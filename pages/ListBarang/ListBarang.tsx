@@ -1,10 +1,10 @@
-'use client'
+'use client';
 import { TBarang } from '@/types/TBarang';
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 
 const ListBarang: React.FC = () => {
-    const router = useRouter()
+    const router = useRouter();
     const [barangList, setBarangList] = useState<TBarang[]>([
         {
             id: 0,
@@ -27,33 +27,24 @@ const ListBarang: React.FC = () => {
             imageUrl: '',
         },
     ]);
- 
 
     function handleBarangClick(id: number): void {
-router.push("/"+id)    }
+        router.push("/" + id);
+    }
 
     return (
-        <div style={{ maxWidth: '800px', margin: '20px auto', padding: '20px', backgroundColor: '#f4f4f4', borderRadius: '8px' }}>
-            
-
-            <ul style={{ listStyleType: 'none', padding: 0 }}>
+        <div className="max-w-2xl mx-auto my-8 p-6 bg-gray-100 rounded-lg shadow-md">
+            <ul className="list-none p-0">
                 {barangList.map((barang) => (
                     <li
                         key={barang.id}
                         onClick={() => handleBarangClick(barang.id)} // Use click handler for navigation
-                        style={{
-                            border: '1px solid #ccc',
-                            borderRadius: '4px',
-                            padding: '10px',
-                            margin: '10px 0',
-                            backgroundColor: '#fff',
-                            cursor: 'pointer', // Change cursor to pointer for clickable items
-                        }}
+                        className="border border-gray-300 rounded-md p-4 mb-4 bg-white cursor-pointer hover:shadow-lg transition-shadow"
                     >
-                        <h3>{barang.name}</h3>
-                        <p><strong>Category:</strong> {barang.category}</p>
-                        <p><strong>Price:</strong> {barang.price} IDR</p>
-                        <p><strong>Stock:</strong> {barang.stock}</p>
+                        <h3 className="text-lg font-semibold">{barang.name}</h3>
+                        <p className="text-gray-700"><strong>Category:</strong> {barang.category}</p>
+                        <p className="text-gray-700"><strong>Price:</strong> {barang.price} IDR</p>
+                        <p className="text-gray-700"><strong>Stock:</strong> {barang.stock}</p>
                     </li>
                 ))}
             </ul>

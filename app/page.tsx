@@ -1,11 +1,16 @@
+import DetailBarang from "@/pages/DetailBarang/DetailBarang";
+import ListBarang from "@/pages/ListBarang/ListBarang";
+import MainMenu from "@/pages/MainMenu/MainMenu";
 import Pembelian from "@/pages/Pembelian/Pembelian";
+import TableBarang from "@/pages/TableBarang/TableBarang";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-       <Pembelian barangList={[{
+       <MainMenu></MainMenu>
+       {/* <DetailBarang barangList={[{
             id: 2,
             name: 'Charger',
             category: 'Charger',
@@ -24,7 +29,7 @@ export default function Home() {
             description: 'Durable phone case.',
             brand: 'Brand B',
             imageUrl: '',
-        },]}></Pembelian>
+        },]}></DetailBarang> */}
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
         22 Cell © 2024
