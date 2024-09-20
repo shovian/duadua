@@ -1,5 +1,5 @@
 export type TBarang = {
-    id: number;                // Unique identifier for the accessory
+    id: string;                // Unique identifier for the accessory
     name: string;              // Name of the accessory
     category: string;          // Category (e.g., charger, case, screen protector)
     price: number;             // Price of the accessory
